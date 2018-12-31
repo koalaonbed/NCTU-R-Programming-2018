@@ -1,12 +1,21 @@
 library(rworldmap)
+library(RColorBrewer)
 gdp <- read.csv("gdpper.csv");
-for (i in 1:266) {
-  for (j in 1:61) {
-    if(is.na(gdp[i,j])){
-      gdp[i,j] <- 1
-    }
-  }
-}
+
+
+#colorRGB <- rep(rgb(1,1,1),248*57)
+#dim(colorRGB) <- c(266,61)
+
+
 mapped_data <- joinCountryData2Map(gdp, joinCode = "ISO3", nameJoinColumn = "Country.Code")
-par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
-mapCountryData(mapped_data, nameColumnToPlot = "X2017")
+
+for (year in 1960:2017) {
+  picname <- paste(year,'.jpg',sep='')
+  jpeg(file=picname)
+  par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+  k<-paste0("X",year)
+  mapCountryData(mapped_data, nameColumnToPlot = k)
+  #title(year)
+  dev.off()
+}
+
