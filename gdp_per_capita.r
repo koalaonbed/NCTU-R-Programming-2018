@@ -10,8 +10,8 @@ gdp <- read.csv("gdpper.csv");
 mapped_data <- joinCountryData2Map(gdp, joinCode = "ISO3", nameJoinColumn = "Country.Code")
 
 for (year in 1960:2017) {
-  picname <- paste(year,'.jpg',sep='')
-  jpeg(file=picname)
+  picname <- paste(year,'.png',sep='')
+  png(file = picname, width = 1080, height = 720)
   par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
   k<-paste0("X",year)
   mapCountryData(mapped_data, nameColumnToPlot = k)
