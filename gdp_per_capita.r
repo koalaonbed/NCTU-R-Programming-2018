@@ -5,7 +5,11 @@ gdp <- read.csv("gdpper.csv");
 
 #colorRGB <- rep(rgb(1,1,1),248*57)
 #dim(colorRGB) <- c(266,61)
-
+#for(i in 5: 62){
+#	for(j in 1:266){
+#		gdp[i,j] <- gdp[i,j]/10000
+#	}
+#}
 
 mapped_data <- joinCountryData2Map(gdp, joinCode = "ISO3", nameJoinColumn = "Country.Code")
 
