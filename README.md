@@ -2,4 +2,9 @@
 ## Visualize global economy
 
 **R** is a powerful programming language of viasualization, so we want to make the best use of it.
-gan shie dar ching <3
+I choose to visualize each country's GDP per capita.
+
+Dependencies
+```r
+library(rworldmap)
+```
