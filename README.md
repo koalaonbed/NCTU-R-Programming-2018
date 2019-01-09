@@ -31,5 +31,5 @@ for (year in 1960:2017) {
 ```
 
 Also, I make a GIF!
-![Image of GDPperCapita](NCTU-R-Programming-2018/GDP per capita.gif)
+![Image of GDPperCapita](https://github.com/koalaonbed/NCTU-R-Programming-2018/blob/master/GDP%20per%20capita.gif)
       
