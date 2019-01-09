@@ -29,3 +29,5 @@ for (year in 1960:2017) {
   dev.off()
 }
 ```
+
+Also, I make a GIF!
