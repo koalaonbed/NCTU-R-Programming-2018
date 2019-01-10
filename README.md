@@ -7,6 +7,7 @@ I choose to visualize each country's GDP per capita.
 Dependencies
 ```r
 library(rworldmap)
+library(animation)
 ```
 
 First, read the data from World Bank.
@@ -17,7 +18,7 @@ Then, match data to world map.
 ```r
 mapped_data <- joinCountryData2Map(gdpper, joinCode = "ISO3", nameJoinColumn = "Country.Code")
 ```
-Last, output image of each year!
+And, output image of each year!
 ```r
 for (year in 1960:2017) {
   picname <- paste(year,'.png',sep='')
@@ -30,7 +31,18 @@ for (year in 1960:2017) {
 }
 ```
 
-Also, I use online tool to make a GIF!
+Moreover, make a GIF!
+```r
+saveGIF({
+	for (year in 1960:2017) {  
+	  par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+	  k<-paste0("X",year)
+	  mapCountryData(mapped_data, nameColumnToPlot = k)
+	  #title(year)
+	}
+}, movie.name = "animation.gif", interval = 0.5, ani.width = 1280
+)
+```
 ![Image of GDPperCapita](https://github.com/koalaonbed/NCTU-R-Programming-2018/blob/master/GDP%20per%20capita.gif)
 
       
