@@ -43,6 +43,6 @@ saveGIF({
 }, movie.name = "animation.gif", interval = 0.5, ani.width = 1280
 )
 ```
-![Image of GDPperCapita](https://github.com/koalaonbed/NCTU-R-Programming-2018/blob/master/GDP%20per%20capita.gif)
+
 
       
