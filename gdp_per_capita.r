@@ -1,4 +1,5 @@
 library(rworldmap)
+library(animation)
 gdpper <- read.csv("gdpper.csv");
 
 
@@ -24,3 +25,15 @@ for (year in 1960:2017) {
   dev.off()
 }
 
+saveGIF({
+for (year in 1960:2017) {
+  
+  
+  par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+  k<-paste0("X",year)
+  mapCountryData(mapped_data, nameColumnToPlot = k)
+  #title(year)
+  
+}
+}, movie.name = "animation.gif", interval = 0.5, ani.width = 1280
+)
