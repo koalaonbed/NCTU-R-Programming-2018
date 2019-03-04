@@ -1,0 +1,3 @@
+將各天資料用rbind起來
+然後篩選出有SiteName是新竹的
+再用ggplot做出圖表

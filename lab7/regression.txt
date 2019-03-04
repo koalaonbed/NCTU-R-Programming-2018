@@ -1,0 +1,2 @@
+將資料做rbind後，取linear regression，
+然後對testing data取rms即可

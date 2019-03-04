@@ -1,0 +1,3 @@
+先用sample函式建出隨機75個index
+然後將其index對應到的iris資料丟給morning
+其他丟給evening
